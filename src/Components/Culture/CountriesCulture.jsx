@@ -10,7 +10,7 @@ export default function CountriesCulture() {
       id: 1,
       name: "Japan",
       flag: "🇯🇵",
-      image: "https://images.unsplash.com/photo-1540959733332-abc0499434c1?w=400&h=250&fit=crop",
+      image: "./Homescreen/Countries/ANZ.jpg",
       summary: "Ancient traditions meet cutting-edge technology.",
       cultureLink: "https://www.japan.travel/en/culture/"
     },
@@ -34,7 +34,7 @@ export default function CountriesCulture() {
       id: 4,
       name: "Brazil",
       flag: "🇧🇷",
-      image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&h=250&fit=crop",
+      image: "./Homescreen/Countries/Brazil.jpg",
       summary: "Vibrant carnival and Amazonian diversity.",
       cultureLink: "https://www.visitbrasil.com/en/culture/"
     },
@@ -42,7 +42,7 @@ export default function CountriesCulture() {
       id: 5,
       name: "Mexico",
       flag: "🇲🇽",
-      image: "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?w=400&h=250&fit=crop",
+      image: "./Homescreen/Countries/Max.jpg",
       summary: "Colorful traditions and ancient heritage.",
       cultureLink: "https://www.visitmexico.com/en/culture"
     },
@@ -50,7 +50,7 @@ export default function CountriesCulture() {
       id: 6,
       name: "Egypt",
       flag: "🇪🇬",
-      image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=400&h=250&fit=crop",
+      image: "./Homescreen/Countries/Brazil.jpg",
       summary: "Pharaohs and timeless archaeological wonders.",
       cultureLink: "https://www.egypt.travel/culture"
     },

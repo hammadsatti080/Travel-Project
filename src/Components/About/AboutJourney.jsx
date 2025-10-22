@@ -98,7 +98,7 @@ const AboutJourney = () => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

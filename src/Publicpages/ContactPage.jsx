@@ -307,7 +307,7 @@ export default function TravelContactPage() {
                           style={{cursor: 'pointer'}}
                           onClick={() => setActiveDropdown(activeDropdown === 'travelers' ? null : 'travelers')}
                         >
-                          <span>{formData.travelers === "9+" ? "9+ People" : `${formData.travelers} ${formData.travelers == 1 ? 'Person' : 'People'}`}</span>
+                          <span>{formData.travelers === "9+" ? "9+ People" : `${formData.travelers} ${formData.travelers === 1 ? 'Person' : 'People'}`}</span>
                           <i className={`bi bi-chevron-down ${activeDropdown === 'travelers' ? 'rotate-180' : ''}`}></i>
                         </div>
                         
