@@ -14,37 +14,37 @@ export default function Popularplace() {
       id: 1,
       name: "Bali, Indonesia",
       tours: 6,
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach.jpg",
     },
     {
       id: 2,
       name: "Santorini, Greece",
       tours: 6,
-      img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach1.jpg",
     },
     {
       id: 3,
       name: "Cappadocia, Turkey",
       tours: 6,
-      img: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach2.jpg",
     },
     {
       id: 4,
       name: "Kyoto, Japan",
       tours: 6,
-      img: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Mountain/thiland.jpg",
     },
     {
       id: 5,
       name: "Maldives",
       tours: 6,
-      img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach1.jpg",
     },
     {
       id: 6,
       name: "Swiss Alps, Switzerland",
       tours: 6,
-      img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach3.jpg",
     },
   ];
   const navigate = useNavigate();

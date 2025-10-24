@@ -1,8 +1,8 @@
 import {React,useEffect} from 'react'
-import Header from '../Components/Places/Header'
+
 import Discover from '../Components/Places/Discover'
 import Counter from '../Publicpages/Counter'
-import Packages from '../Components/Places/Packages'
+
 import BookingWidget from '../Components/Places/Booking/BookingWidget'
 import Tripcard from '../Components/Places/Tripcard'
 import FlightDeals from '../Components/Places/FlightDeals'

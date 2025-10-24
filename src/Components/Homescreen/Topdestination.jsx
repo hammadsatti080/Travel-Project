@@ -15,19 +15,19 @@ export default function Topdestination() {
       id: 1,
       name: "Bali, Indonesia",
       discount: "25% OFF",
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Mountain/thiland2.webp",
     },
     {
       id: 2,
       name: "Santorini, Greece",
       discount: "30% OFF",
-      img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Mountain/thiland2.webp",
     },
     {
       id: 3,
       name: "Kyoto, Japan",
       discount: "20% OFF",
-      img: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Mountain/thiland4.jpg",
     },
 
   ];

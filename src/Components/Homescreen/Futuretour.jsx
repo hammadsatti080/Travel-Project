@@ -16,7 +16,7 @@ export default function Futuretour() {
       discount: "20% OFF",
       price: "$899",
       reviews: 4.8,
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach4.jpg",
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export default function Futuretour() {
       discount: "30% OFF",
       price: "$1099",
       reviews: 4.9,
-      img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach5.jpg",
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export default function Futuretour() {
       discount: null,
       price: "$1299",
       reviews: 4.7,
-      img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach2.jpg",
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ export default function Futuretour() {
       discount: null,
       price: "$1499",
       reviews: 4.9,
-      img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach5.jpg",
     },
   ];
 

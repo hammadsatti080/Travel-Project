@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: "Destination", path: "/Places" },
     { name: "Contact", path: "/Contact" },
     { name: "About Us", path: "/about" },
+    { name: "Terminal", path: "/Terminals" },
   ];
 
   return (
@@ -158,42 +159,7 @@ export default function Navbar() {
         ))}
 
         {/* Buttons in mobile view */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            marginTop: "15px",
-            width: "80%",
-          }}
-        >
-          <button
-            style={{
-              border: "1px solid #000",
-              background: "transparent",
-              color: "#000",
-              padding: "10px",
-              borderRadius: "8px",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            Login
-          </button>
-          <button
-            style={{
-              backgroundColor: "#000",
-              color: "#fff",
-              border: "none",
-              padding: "10px",
-              borderRadius: "8px",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            Sign Up
-          </button>
-        </div>
+        
       </div>
 
       {/* Inline Responsive CSS */}

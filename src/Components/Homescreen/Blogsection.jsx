@@ -16,7 +16,7 @@ export default function Blogsection() {
       category: "Adventure",
       description:
         "Discover breathtaking trails and hidden gems on your next mountain escape. Perfect for thrill-seekers and nature lovers.",
-      img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach5.jpg",
       link: "Blogs",
     },
     {
@@ -25,7 +25,7 @@ export default function Blogsection() {
       category: "Luxury Travel",
       description:
         "Indulge in serene beaches, private villas, and world-class dining for an unforgettable vacation experience.",
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach1.jpg",
       link: "Luxury",
     },
     {
@@ -34,7 +34,7 @@ export default function Blogsection() {
       category: "Culture",
       description:
         "Explore the traditions, festivals, and heritage that make every country a unique destination worth visiting.",
-      img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Terminal/Beach4.jpg",
       link: "culture",
     },
   ];

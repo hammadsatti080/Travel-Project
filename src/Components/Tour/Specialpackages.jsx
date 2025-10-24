@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Specialpackages() {
   const packages = [
     {
+      id: "beachparadise",
       img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
       name: "Beach Paradise",
       days: "5 Days / 4 Nights",
       price: "$899",
     },
     {
+      id: "mountainadventure",
       img: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1600&q=80",
       name: "Mountain Adventure",
       days: "7 Days / 6 Nights",
       price: "$1,099",
     },
     {
+      id: "city-lights-tour",
       img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
       name: "City Lights Tour",
       days: "3 Days / 2 Nights",
       price: "$499",
     },
     {
+      id: "desertescape",
       img: "https://up.yimg.com/ib/th/id/OIP.c9Uw0ESxFekMY4gJz8EgVQHaEK?pid=Api&rs=1&c=1&qlt=95&w=219&h=123",
       name: "Desert Escape",
       days: "4 Days / 3 Nights",
@@ -29,11 +34,16 @@ export default function Specialpackages() {
   ];
 
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Animate entry when component mounts
     setTimeout(() => setVisible(true), 200);
   }, []);
+
+  // Har package ke liye alag navigation function
+  const handleExplore = (packageId) => {
+    navigate(`/explore/${packageId}`);
+  };
 
   const ClockIcon = (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" strokeWidth="2">
@@ -55,7 +65,7 @@ export default function Specialpackages() {
     >
       {packages.map((pkg, index) => (
         <div
-          key={index}
+          key={pkg.id}
           style={{
             width: "330px",
             backdropFilter: "blur(10px)",
@@ -174,12 +184,13 @@ export default function Specialpackages() {
 
             {/* Fancy Explore button */}
             <button
+              onClick={() => handleExplore(pkg.id)}
               style={{
                 width: "100%",
                 padding: "12px 18px",
                 borderRadius: "10px",
                 border: "none",
-               backgroundColor:"black",
+                backgroundColor: "black",
                 color: "#fff",
                 fontWeight: "700",
                 letterSpacing: "0.3px",
@@ -212,7 +223,7 @@ export default function Specialpackages() {
                   left: "-100%",
                   width: "100%",
                   height: "100%",
-                  background:  "linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0))",
+                  background: "linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0))",
                   transform: "skewX(-20deg)",
                   animation: "shine 2.2s infinite",
                 }}

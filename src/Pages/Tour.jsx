@@ -4,8 +4,6 @@ import Specialpackages from '../Components/Tour/Specialpackages'
 import SpecialDiscount from '../Components/Tour/SpecialDiscount'
 import Counter from '../Publicpages/Counter'
 import Packages from '../Components/Places/Packages'
-import Tripcard from '../Components/Places/Tripcard'
-import About from '../Components/Tour/About'
 import Feature from '../Components/Tour/Feature'
 import Quality from '../Components/Tour/Quality'
 export default function Tour() {

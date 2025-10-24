@@ -12,7 +12,7 @@ export default function Hero() {
 
   const background = {
     backgroundImage:
-      "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80')",
+      "url('./Homescreen/Countries/Terminal/Beach3.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "70vh",

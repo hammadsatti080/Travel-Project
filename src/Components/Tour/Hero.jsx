@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 export default function Hero() {
   const images = [
-    "./Homescreen/futuretour.avif",
-    "./Homescreen/Homescreen.avif",
-    "./Homescreen/futuretour.avif",
+    "./Homescreen/Countries/Terminal/Beach3.jpg",
+    "./Homescreen/Countries/Terminal/Beach1.jpg",
+    "./Homescreen/Countries/Terminal/Beach.jpg",
   ];
 
   const [current, setCurrent] = useState(0);

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 /**
- * PopularTours.jsx (Updated)
+ * PopularTours.jsx (Fixed Version)
+ * - Fixed navigation to payment page
  * - Horizontal scroll on mobile, grid on desktop
  * - Pure inline CSS
- * - Click "Buy Ticket" opens modal with discount logic
  */
 
 const Star = ({ filled }) => (
@@ -39,7 +40,7 @@ export default function PopularTours() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [selected, setSelected] = useState(null);
   const [qty, setQty] = useState(1);
-  const [purchased, setPurchased] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -56,7 +57,7 @@ export default function PopularTours() {
       reviews: 1284,
       price: 899,
       discount: 25,
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80",
+      img: "./Homescreen/Countries/Terminal/Bali.jpeg",
     },
     {
       id: 2,
@@ -66,7 +67,7 @@ export default function PopularTours() {
       reviews: 940,
       price: 1199,
       discount: 30,
-      img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+      img: "./Homescreen/Countries/Terminal/Bali.jpeg",
     },
     {
       id: 3,
@@ -76,7 +77,7 @@ export default function PopularTours() {
       reviews: 760,
       price: 999,
       discount: 15,
-      img: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=1400&q=80",
+      img: "./Homescreen/Countries/Terminal/Bali.jpeg",
     },
     {
       id: 4,
@@ -86,7 +87,7 @@ export default function PopularTours() {
       reviews: 520,
       price: 1499,
       discount: 40,
-      img: "https://images.unsplash.com/photo-1508264165352-258859e62245?auto=format&fit=crop&w=1400&q=80",
+      img: "./Homescreen/Countries/Terminal/Bali.jpeg",
     },
   ];
 
@@ -98,29 +99,91 @@ export default function PopularTours() {
   function openModal(tour) {
     setSelected(tour);
     setQty(1);
-    setPurchased(null);
     document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     setSelected(null);
-    setPurchased(null);
     document.body.style.overflow = "";
   }
 
-  function confirmPurchase() {
-    const unit = discountedPrice(selected.price, selected.discount);
-    const total = Math.round(unit * qty * 100) / 100;
-    setPurchased({
-      tour: selected.name,
-      unit,
-      qty,
-      total,
-      time: new Date().toLocaleString(),
+  // ✅ FIXED: handleTicket function with proper navigation
+  const handleTicket = (tour, event) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    
+    console.log("🎫 Buy Ticket clicked for:", tour.name);
+    
+    const unitPrice = discountedPrice(tour.price, tour.discount);
+    const totalPrice = unitPrice * 1;
+    
+    const ticketData = {
+      tourId: tour.id,
+      tourName: tour.name,
+      speciality: tour.speciality,
+      unitPrice: unitPrice,
+      quantity: 1,
+      totalPrice: totalPrice,
+      discount: tour.discount,
+      originalPrice: tour.price,
+      image: tour.img,
+      rating: tour.rating
+    };
+
+    console.log("📍 Navigating to /travel-payment with data:", ticketData);
+    
+    // ✅ FIXED: Using navigate with replace: true
+    navigate("/travel-payment", { 
+      state: { 
+        ticketData: ticketData,
+        type: "tour" 
+      },
+      replace: false
     });
-  }
-// 🔹 Replace your container styles with this:
-const mobileContainer = {
+  };
+
+  // ✅ FIXED: handleTicketWithQuantity function
+  const handleTicketWithQuantity = (event) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    
+    if (!selected) return;
+    
+    console.log("🎫 Modal Buy Ticket clicked for:", selected.name);
+    
+    const unitPrice = discountedPrice(selected.price, selected.discount);
+    const totalPrice = unitPrice * qty;
+    
+    const ticketData = {
+      tourId: selected.id,
+      tourName: selected.name,
+      speciality: selected.speciality,
+      unitPrice: unitPrice,
+      quantity: qty,
+      totalPrice: totalPrice,
+      discount: selected.discount,
+      originalPrice: selected.price,
+      image: selected.img,
+      rating: selected.rating
+    };
+
+    console.log("📍 Navigating to /travel-payment with data:", ticketData);
+    
+    // ✅ FIXED: Using navigate with replace: true
+    navigate("/travel-Payment", { 
+      state: { 
+        ticketData: ticketData,
+        type: "tour" 
+      },
+      replace: false
+    });
+  };
+
+  const mobileContainer = {
     width: "90%",
     margin: "0 auto",
     display: "flex",
@@ -137,7 +200,6 @@ const mobileContainer = {
     gap: "22px",
   };
   
-  // 🔹 And your card style stays the same, no need to change.
   const cardStyle = {
     width: "100%",
     maxWidth: "350px",
@@ -149,13 +211,16 @@ const mobileContainer = {
     flexDirection: "column",
     transition: "transform 0.35s ease, box-shadow 0.35s ease",
   };
-  
+
   return (
-    <section style={{ padding: "40px 0", background: "#f7f9fb" }}>
+    <section style={{ padding: "40px 0", background: "#f7f9fb", minHeight: "100vh" }}>
       <div style={{ width: "90%", margin: "0 auto 30px" }}>
         <h2 style={{ margin: 0, fontSize: 28, fontWeight: 700, color: "#111" }}>
           🌍 Popular Tours
         </h2>
+        <p style={{ margin: "8px 0 0", color: "#666", fontSize: 16 }}>
+          Discover amazing destinations with exclusive discounts
+        </p>
       </div>
 
       {/* container responsive switch */}
@@ -285,13 +350,13 @@ const mobileContainer = {
                 }}
               >
                 <button
-                  onClick={() => openModal(t)}
+                  onClick={(e) => handleTicket(t, e)}
                   style={{
                     flex: 1,
-                    backgroundColor:"black",
+                    backgroundColor: "black",
                     color: "#fff",
                     border: "none",
-                    padding: "10px 12px",
+                    padding: "12px 16px",
                     borderRadius: 10,
                     fontWeight: 700,
                     display: "flex",
@@ -299,10 +364,45 @@ const mobileContainer = {
                     justifyContent: "center",
                     gap: 8,
                     cursor: "pointer",
+                    fontSize: "14px",
+                    transition: "all 0.3s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#333";
+                    e.target.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "black";
+                    e.target.style.transform = "translateY(0)";
                   }}
                 >
                   <TicketIcon />
                   Buy Ticket
+                </button>
+                
+                <button
+                  onClick={() => openModal(t)}
+                  style={{
+                    background: "#fff",
+                    color: "#0d6efd",
+                    border: "1px solid #0d6efd",
+                    padding: "12px 16px",
+                    borderRadius: 10,
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    fontSize: "12px",
+                    transition: "all 0.3s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = "#0d6efd";
+                    e.target.style.color = "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = "#fff";
+                    e.target.style.color = "#0d6efd";
+                  }}
+                >
+                  Quick View
                 </button>
               </div>
             </article>
@@ -353,9 +453,7 @@ const mobileContainer = {
               >
                 <div style={{ color: "#888" }}>Unit price</div>
                 <div style={{ fontWeight: 800, color: "#0d6efd" }}>
-                  ${discountedPrice(selected.price, selected.discount).toFixed(
-                    2
-                  )}
+                  ${discountedPrice(selected.price, selected.discount).toFixed(2)}
                 </div>
               </div>
 
@@ -430,19 +528,29 @@ const mobileContainer = {
 
               <div style={{ marginTop: 18, display: "flex", gap: 10 }}>
                 <button
-                  onClick={confirmPurchase}
+                  onClick={handleTicketWithQuantity}
                   style={{
                     flex: 1,
                     background: "linear-gradient(90deg,#0d6efd,#6610f2)",
                     color: "#fff",
                     border: "none",
-                    padding: "10px 14px",
+                    padding: "12px 16px",
                     borderRadius: 10,
                     fontWeight: 800,
                     cursor: "pointer",
+                    fontSize: "14px",
+                    transition: "all 0.3s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = "translateY(-2px)";
+                    e.target.style.boxShadow = "0 8px 20px rgba(13, 110, 253, 0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = "translateY(0)";
+                    e.target.style.boxShadow = "none";
                   }}
                 >
-                  Confirm Purchase
+                  Proceed to Payment
                 </button>
 
                 <button
@@ -451,33 +559,24 @@ const mobileContainer = {
                     flex: 0,
                     background: "#fff",
                     border: "1px solid #e6e9ee",
-                    padding: "10px 14px",
+                    padding: "12px 16px",
                     borderRadius: 10,
                     cursor: "pointer",
+                    fontSize: "14px",
+                    transition: "all 0.3s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = "#f8f9fa";
+                    e.target.style.borderColor = "#0d6efd";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = "#fff";
+                    e.target.style.borderColor = "#e6e9ee";
                   }}
                 >
                   Cancel
                 </button>
               </div>
-
-              {purchased && (
-                <div
-                  style={{
-                    marginTop: 16,
-                    padding: 12,
-                    borderRadius: 8,
-                    background: "#f3fff6",
-                    color: "#0b5",
-                  }}
-                >
-                  ✅ Purchase successful — {purchased.qty} × {purchased.tour} —
-                  Total ${purchased.total.toFixed(2)}
-                  <br />
-                  <small style={{ color: "#555" }}>
-                    Ref: {Math.floor(Math.random() * 900000 + 100000)}
-                  </small>
-                </div>
-              )}
             </div>
           </div>
         </div>
