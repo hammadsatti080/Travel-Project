@@ -203,18 +203,7 @@ export default function Futuretour() {
         ))}
       </div>
 
-      {/* View More Button */}
-      <div className="mt-5">
-        <button
-          className="btn btn-dark px-4 py-2 fw-semibold"
-          style={{
-            borderRadius: "8px",
-            letterSpacing: "0.5px",
-          }}
-        >
-          Explore More Deals
-        </button>
-      </div>
+     
     </div>
   );
 }

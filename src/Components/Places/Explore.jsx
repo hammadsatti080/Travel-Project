@@ -8,7 +8,7 @@ export default function Explore() {
       name: "Lahore",
       properties: "2,218 properties",
       link: "https://en.wikipedia.org/wiki/Lahore",
-      image: "./Homescreen/View1.webp"
+      image: "./Homescreen/Countries/Mountain/Lahore.webp"
     },
     {
       id: 2,

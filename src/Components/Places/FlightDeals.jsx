@@ -11,7 +11,7 @@ export default function FlightDeals() {
       date: "Dec 18 - Jan 20",
       price: "$364.90",
       type: "Round Trip",
-      img: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Mountain/Dubai.jpg",
       mapLink: "https://www.google.com/maps/place/Dubai/",
     },
     {
@@ -21,7 +21,7 @@ export default function FlightDeals() {
       date: "Nov 09 - Nov 23",
       price: "$472.16",
       type: "Round Trip",
-      img: "./Homescreen/Islamabad.jpg",
+      img: "./Homescreen/Countries/Mountain/Jaddah.jpg",
       mapLink: "https://www.google.com/maps/place/Jeddah/",
     },
     {
@@ -31,7 +31,7 @@ export default function FlightDeals() {
       date: "Jan 22 - Feb 04",
       price: "$715.03",
       type: "Round Trip",
-      img: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Mountain/London.avif",
       mapLink: "https://www.google.com/maps/place/London/",
     },
     {
@@ -51,7 +51,7 @@ export default function FlightDeals() {
       date: "Dec 21 - May 11",
       price: "$1,005.27",
       type: "Round Trip",
-      img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Mountain/Uk.jpeg",
       mapLink: "https://www.google.com/maps/place/New+York+City/",
     },
     {
@@ -61,7 +61,7 @@ export default function FlightDeals() {
       date: "Mar 16 - May 09",
       price: "$1,383.53",
       type: "Round Trip",
-      img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80",
+      img: "./Homescreen/Countries/Mountain/UK.jpeg",
       mapLink: "https://www.google.com/maps/place/San+Francisco/",
     },
   ];

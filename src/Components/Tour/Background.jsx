@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Background() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      image: "./Homescreen/F8Markaz.webp",
+      image: "./Homescreen/Countries/Mountain/Margallahill.webp",
       title: "Discover Your Next Destination ✈️",
       description: "Explore breathtaking destinations, hidden gems, and exclusive travel experiences — all waiting for you to discover."
     },
     {
-      image: "./Homescreen/Faisalmosque.jpg",
+      image: "./Homescreen/Countries/Mountain/Margallahill1.jpg",
       title: "Adventure Awaits 🌴",
       description: "Embark on unforgettable journeys to the world's most amazing places and create lasting memories."
     }
   ];
-
+const navigate=useNavigate()
+const handlebutton=()=>{
+  navigate('/Mountain')
+}
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -59,6 +63,7 @@ export default function Background() {
                   e.target.style.backgroundColor = "#ff6b35";
                   e.target.style.transform = "translateY(0)";
                 }}
+                onClick={handlebutton}
               >
                 Explore Now →
               </button>
@@ -89,7 +94,7 @@ export default function Background() {
                     width: "50px",
                     height: "50px",
                     backdropFilter: "blur(10px)",
-                    backgroundColor:"red",
+                    backgroundColor:"black",
                   }}
                 >
                   <span className="text-white fw-bold fs-4">‹</span>
@@ -101,7 +106,7 @@ export default function Background() {
                     width: "50px",
                     height: "50px",
                     backdropFilter: "blur(10px)",
-                    backgroundColor:"red",
+                    backgroundColor:"black",
                   }}
                 >
                   <span className="text-white fw-bold fs-4">›</span>
